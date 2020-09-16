@@ -1,6 +1,8 @@
 
 $(document).ready(function updateTable(){
 
+  $('#updatepro').hide();
+  
   let data1=[];
   data1=JSON.parse(localStorage.getItem("session_table"));
   var j=0;
@@ -23,21 +25,16 @@ $(document).ready(function updateTable(){
           //var x=data.length;
           localStorage.removeItem('pid_table');
           
-          // var table = $('tbody')[0];
-          //  var numRows = $('#viewlist tr').length;
-          // var pro_img = $('<img>');
-          // pro_img.attr({'src':item.Image,'width':50,'height':50});
           var newRow = "<tr>"
               +"<td>"+item.Product_id+"</td>"
               +"<td>"+item.Product_name+"</td>"
               +"<td>"+item.Product_price+"</td>"
               +"<td><img src="+item.Image+" width="+50+" height="+50+"></img></td>"
-              +"<td><button class='editRow'p-id="+item.Product_id+">Edit</button></td>"
+              +"<td><button class='editRow' p-id="+item.Product_id+">Edit</button></td>"
               +"<td><button class='delRow' pro-id="+item.Product_id+">Delete</button></td>"
            +"</tr>";
                 //$(".delRow").attr('pro-id',item.Product_id);
-          
-                $(newRow).appendTo("#list tbody");
+                  $(newRow).appendTo("#list tbody");
         //   );
           }
      }
@@ -87,13 +84,14 @@ $(document).ready(function updateTable(){
 
           function onEdit(td) {
               
-                var pid=$(td).attr("p-id");
+                //var pid=$(td).attr("p-id");
                 row = td.parent().parent();
                 var d= row.children();
-                var pid=$('d[0]').html();
-                var name=$('d[1]').html();
-                var price=$('d[2]').html();
-                var image=$('d[3]').html();
+                var pid=$(d[0]).text();
+                var name=$(d[1]).text();
+                var price=$(d[2]).text();
+                var img=$(d[3]).html();
+                var image=$(img).attr("src");
             //window.pid=td.getAttribute('p-id'); 
             let pid_data=localStorage.getItem("pid_table");
               if(pid_data==null)
@@ -106,8 +104,8 @@ $(document).ready(function updateTable(){
               task1.push({'pid':pid,'name':name,'price':price,'image':image});
               localStorage.setItem("pid_table",JSON.stringify(task1));
 
-              document.getElementById('updatepro').style.display="";
-              document.getElementById('disptab').style.display="none";
+              $('#updatepro').show();
+              $('#disptab').hide();
               updatePro();
            }
 
@@ -128,10 +126,10 @@ $(document).ready(function updateTable(){
                     $("#productprice").val(pro.price);
                     $("#productimage").val(pro.image);
                     window.proid=pro.pid;
-                    updateRecord();
+                    //updateRecord();
             }
 
-            function updateRecord() {
+            $('#pro1').click(function updateRecord() {
               if(confirm("Are you sure to update changes??"))
                 {
                     let Data=[];
@@ -157,15 +155,17 @@ $(document).ready(function updateTable(){
                     alert("item updated");
                     formclear();
                     localStorage.removeItem('pid_table');
-                    document.getElementById('updatepro').style.display="none";
+                    $('#updatepro').hide();
+                    location.reload();
+                    $('#disptab').show();
                     //location.reload();
                 }
                 else{ 
                     formclear();
                     localStorage.removeItem('pid_table');
                   }
-              }
-  
+              })
+            
               function getInfo() {
                   let data; 
                 
@@ -189,6 +189,10 @@ $(document).ready(function updateTable(){
                   var data=[proId,proName,proPrice,proImg];
                   return data;
               }
+
+              $('#pro2').click(function(){
+                formclear();
+              })
   
               function formclear(){
                   $('#productid').val(" ");
