@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="product.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    
+
+    <div class="header">
+       <b>UPDATE YOUR PRODUCTS HERE</b>
+    </div> <br>
+    
+    <div id="disptab" style="background-color:lightyellow;">
+      <table id="list" class="u-full-width" style="display:none;">
+          <thead>
+              <tr>
+                  <th>Id</th>
+                  <th>Name</th>
+                  <th>Price</th>
+                  <th>Image</th>
+                  <th></th>
+              </tr>
+          </thead><br>
+         <tbody> </tbody> 
+      </table>
+    </div>
+
+    <div id="updatepro" style="display:none;">
+    <br><b>UPDATE PRODUCT</b><br><br>
+        
+    PRODUCT ID:<input type="text" id="productid"/><br><br>
+    PRODUCT NAME:<input type="text" id='productname'/> <br><br>
+    PRODUCT PRICE:<input type="text" id='productprice'/><br><br>
+    PRODUCT IMAGE:<input type="text" id='productimage'/><br><br>
+    
+    <a onclick="updateRecord()" style="background-color: lightgray;">UPDATE</a></t>
+    <a onclick="formclear()" style="background-color: lightgray;">RESET</a>
+   <br><br>
+  </div>
+   
+  
+  <script src="product.js"></script>
+    
+</body>
+</html>

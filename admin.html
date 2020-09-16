@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="admin.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+</head>
+<body>
+    
+    
+    <div class="header" >
+        <a  id="log" href="#"><i class="fa fa-user-circle-o" style="font-size: 40px;"></i></a>
+        <p id="out">ADMIN PANEL</p>
+    </div>
+
+    <div class="content">
+        <div class="box1">
+         <a href="./home/home.html"  target="if1" id="box1">Add List</a>
+        </div>
+        <div class="box2">
+        <a href="./product list/product.html" target="if2" id="box2">Update List</a>
+        </div>
+        <div class="box3">
+            <a href="./View/view.html" target="if3" id="box3">View List</a>
+        </div>
+        
+    </div>
+
+    <div id="container">
+        <iframe id="if" src="./home/home.html" frameborder="0" height="500px" width="935px" name="if1"></iframe>
+        <iframe src="./product list/product.html" id="if3" frameborder="0"height="500px" width="935px" name="if2"></iframe>
+        <iframe src="./View/view.html" id="if4" frameborder="0"height="500px" width="935px" name="if3"></iframe>
+    </div>
+
+    
+    
+
+    <script src="admin.js"></script>
+</body>
+</html>

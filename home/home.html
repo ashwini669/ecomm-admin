@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="home.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+</head>
+<body>
+    
+    <div class="header">
+      <p id="Pg"><b> Welcome to Admin Dashboard</b></p>
+      <i id="icon" class="fa fa-user-secret"></i>
+      <button onclick="$('#id01').show()" id="pro">ADD PRODUCT</button>
+    </div>
+    
+
+<div id="id01" class="modal">
+
+  <form class="modal-content" autocomplete="off">
+    <div class="container">
+      <h1>ADD PRODUCT</h1>
+      <hr>
+      
+      <div class="p4">
+        <label for="Pname"><b>Product Id</b></label>
+        <input type="text" id="proid" placeholder="Enter the Product Id" name="Pid" required>
+      </div>
+
+      <div class="p1">
+        <label for="Pname"><b>Product Name</b></label>
+        <input type="text" id="name" placeholder="Enter the Product Name" name="Pname" required>
+      </div>
+
+      <div class="p2">
+        <label for="Price" style="margin-left: 5px;"><b>Price</b></label>
+        <input type="text" id="price" placeholder="Enter the Price" style="margin-left: 15px;" name="price" required>
+      </div>
+             
+      <div class="p3">
+        <label for="Pimg"><b>Image  Url</b></label>
+        <input type="text" id="upload" placeholder="Image Url" style="margin-left: 15px;" name="Pimg" required>
+      </div>
+      
+
+      <div class="clearfix">
+        <button type="button" class="signupbtn" >Add</button>
+        <button type="button" onclick="$('#id01').hide()" class="cancelbtn">Cancel</button>
+       </div>
+    </div>
+  </form>
+</div>
+    <script src="home.js"></script>
+</body>
+</html>

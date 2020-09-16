@@ -1,0 +1,314 @@
+body{
+    background-image: url(./home/back3.jfif);
+ }
+
+.header{
+    text-align: center;
+    font-size: 50px;
+    background-color: coral;
+    
+
+    color:white;
+    border-radius: 5px;
+    margin: 0 ;    
+}
+
+.header #log{
+    float: right;
+    padding-right: 1%;
+}
+
+ .header #out{
+    text-align: center;
+    padding: 1%;
+}
+
+.content{
+
+    width: 100%;
+    background-color:white;
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    
+}
+
+a{
+    text-decoration: none;
+    color: white;
+}
+
+.content .box1{
+    
+    background-color: teal;
+    color: white;
+    padding: 1% 13.5%;
+    font-size: 20px;
+    border: 1px solid white;
+    
+}
+
+.content .box2{
+    background-color: teal;
+    color: white;
+    padding: 1% 13.6%;
+    font-size: 20px;
+    border: 1px solid white;
+    
+}
+
+.content .box3{
+    background-color: teal;
+    color: white;
+    padding: 1% 13.5%;
+    font-size: 20px;
+    border: 1px solid white;
+    
+}
+
+#container{
+    width:100%;
+    position: relative;
+    margin-top:10px;
+    background-color: white;
+    
+}
+
+#container #if{
+    top:0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    
+    
+    
+
+    
+}
+
+#container #if3{
+    z-index: 9;
+    
+    display: none;
+    width: 100%;
+    
+    
+    
+    
+}
+
+#container #if4{
+
+    z-index: 9;
+    display: none;
+    width: 100%;
+
+}
+
+@media screen and (max-width: 338px) {
+
+       body{
+           width: 100%;
+           height: 100%;
+       }
+
+
+
+       .header{
+           width: 100%;
+           font-size: 22px;
+           padding: 1% 0;
+           
+       }
+
+       
+
+       #container{
+           
+           margin-top: 5px;
+           width: 100%;
+           font-size: 10px;
+           
+           
+           
+
+       }
+
+       #log{
+           float: none;
+           font-size: 20px;
+           padding: 4% 0;
+
+           
+       }
+
+      #if{
+         
+
+        width: 100%;
+        
+        
+
+      }
+
+      .box1{
+          margin-left: 5px;
+          margin-top: 5px;
+          padding: 5px 25px 5px 25px;
+          font-size: 20px;
+      }
+
+      .box2{
+        padding: 5px 25px 5px 25px;
+                font-size: 20px;
+      }
+
+      .box3{
+        padding: 5px 25px 5px 25px;
+                font-size: 20px;
+                margin-right: 23px;
+      }
+
+      
+      #if3{
+         
+
+        width: 100%;
+      }
+
+      
+      #if4{
+         
+
+        width: 100%;
+        
+        
+
+      }
+
+      .content{
+        width: 100%;
+        margin-top: 5px;
+    }
+
+    .content .box1{
+    
+        
+        padding: 0;
+        
+        
+    }
+    
+    .content .box2{
+        
+        padding: 0;
+        
+        
+    }
+    
+    .content .box3{
+        
+        padding:  0;
+        
+        
+        
+    }
+
+    
+  }
+
+  @media screen and (max-width: 720px){
+
+    
+
+
+    #container{
+        width: 100%;
+    }
+
+    #if{
+        width: 100%;
+    }
+
+    #if3{
+        width: 100%;
+    }
+
+    .content{
+        width: 100%;
+    }
+
+    .content .box1{
+    
+        
+        padding: 1% 11.5%;
+        
+        
+    }
+    
+    .content .box2{
+        
+        padding: 1% 11.6%;
+        
+        
+    }
+    
+    .content .box3{
+        
+        padding: 1% 11.5%;
+        
+        
+        
+    }
+
+
+
+  }
+
+  @media screen and (max-width: 450px){
+
+    
+
+
+    #container{
+        width: 100%;
+    }
+
+    #if{
+        width: 100%;
+    }
+
+    #if3{
+        width: 100%;
+    }
+
+    .content{
+        width: 100%;
+    }
+
+    .content .box1{
+    
+        
+        padding: 1% 9.5%;
+        
+        
+    }
+    
+    .content .box2{
+        
+        padding: 1% 9.6%;
+        
+        
+    }
+    
+    .content .box3{
+        
+        padding: 1% 9.5%;
+        
+        
+        
+    }
+
+
+
+  }
