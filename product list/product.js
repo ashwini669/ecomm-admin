@@ -12,9 +12,8 @@ $(document).ready(function updateTable(){
   let data2=[];
   data2=JSON.parse(localStorage.getItem("pro_table"));
 
-    for(var i=0 in data2)
-    {
-      var item=data2[i];
+    $.each(data2, function( index, value ) {
+      var item=value;
       var y2=item.admin_email;
    
           if(y1==y2)
@@ -37,7 +36,7 @@ $(document).ready(function updateTable(){
                   $(newRow).appendTo("#list tbody");
         //   );
           }
-     }
+     })
 
         $("#list").on('click', '.delRow', function () {
           if (confirm('Are you sure to delete this record ?'))
@@ -138,18 +137,19 @@ $(document).ready(function updateTable(){
                     let m=[];
                     m=getInfo();
                     
-                    for(var i=0 in m)
-                    {
-                      var item=m[i];
+                    // for(var i=0 in m)
+                    // {
+                    $.each(m, function( index, value ) {
+                      var item=value;
                       if(item.Product_id === proid)
                       {
                       item.Product_id=Data[0];
                       item.Product_name=Data[1];
                       item.Product_price=Data[2];
                       item.Image=Data[3];
-                      break;
+                      // break;
                       }
-                    }
+                    })
               
                     localStorage.setItem('pro_table',JSON.stringify(m));
                     alert("item updated");

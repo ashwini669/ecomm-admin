@@ -9,16 +9,17 @@ $(document).ready(function setTable(){
       let data2=[];
       data2=JSON.parse(localStorage.getItem("pro_table"));
       
-          for(var i=0 in data2)
-          {
-             var x2=data2[i];
+          // for(var i=0 in data2)
+          // {
+            $.each(data2, function( index, value ) {
+             var x2=value;
              var y2=x2.admin_email;
               if(y1==y2)
               {
                 $('#list').show();
                 localStorage.removeItem('pid_table');
               
-                var item=data2[i];
+                var item=value;
                 //var pro_img = $('<img>');
                 //var x=item.Image;
                 //pro_img.attr({'src':item.Image,'width':50,'height':50});
@@ -32,6 +33,6 @@ $(document).ready(function setTable(){
                   $(newRow).appendTo("#list tbody");
               }
 
-          }
+          })
   
   })

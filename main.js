@@ -93,51 +93,52 @@ $('#signin').click(function(){
      let data=JSON.parse(localStorage.getItem("admin_table"));
     var i=0;
     var len=(data.length)-1;
-      for( i=0;i<data.length;i++)
-       {
-        var item=data[i];
-        var x=item.email;
-        var y=item.password;
-        var z=item.IsAdmin;
-        
-         if(x === emailadd && y === pass)
-         {
-          if(z=="true")
-          {
-           alert('welcome admin!!');
-           
-           let session_data=localStorage.getItem("session_table");
-           if(session_data==null)
-           {
-             task1=[];
-            }
-           else{
-               task1=JSON.parse(session_data);
-               }
-           task1.push({'email':emailadd});
-           localStorage.setItem("session_table",JSON.stringify(task1));
-           alert('LOGGED IN SUCCESSFULLY');
-           
-           $('#emailadd').val(" ");
-           $('#pass').val(" ");
-           window.location.replace("admin.html");
-           break;
-         }
-         else {
-           alert("welcome user!!!");
-           $('#emailadd').val(" ");
-           $('#pass').val(" ");
-           break;
-          }
-        }
+      
+        $.each(data, function( index, value ) {
 
-        if(i==len && x !== emailadd && y !== pass)
-           { 
-             alert('invalid username and password');
-            location.reload();
-           }
+            var item=value;
+            var x=item.email;
+            var y=item.password;
+            var z=item.IsAdmin;
+            
+            if(x === emailadd && y === pass)
+            {
+              if(z=="true")
+              {
+              alert('welcome admin!!');
+              
+              let session_data=localStorage.getItem("session_table");
+              if(session_data==null)
+              {
+                task1=[];
+                }
+              else{
+                  task1=JSON.parse(session_data);
+                  }
+              task1.push({'email':emailadd});
+              localStorage.setItem("session_table",JSON.stringify(task1));
+              alert('LOGGED IN SUCCESSFULLY');
+              
+              $('#emailadd').val(" ");
+              $('#pass').val(" ");
+              window.location.replace("admin.html");
+             // break;
+            }
+            else {
+              alert("welcome user!!!");
+              $('#emailadd').val(" ");
+              $('#pass').val(" ");
+              //break;
+              }
+            }
+
+            if(i==len && x !== emailadd && y !== pass)
+              { 
+                alert('invalid username and password');
+                location.reload();
+              }
         
-      }
+      })
       
 });
 
